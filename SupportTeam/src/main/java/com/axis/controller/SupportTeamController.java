@@ -20,7 +20,7 @@ import com.axis.service.SupportTeamService;
 
 
 
-@CrossOrigin(origins="")
+@CrossOrigin(origins="http://localhost:3000")
 @RestController
 @RequestMapping("api/v1")
 public class SupportTeamController {
@@ -55,6 +55,14 @@ public class SupportTeamController {
 	public ResponseEntity<String> deleteSupport(@PathVariable String id){
 		return new ResponseEntity<String>(supportTeamService.deleteSupport(id),HttpStatus.OK);
 	}
+	
+	@GetMapping("/{projectname}")
+	public ResponseEntity<SupportTeam> getByProjectName(@PathVariable String projectname){
+	
+		return new ResponseEntity<SupportTeam>(supportTeamService.findByProjectname(projectname), HttpStatus.OK);
+		
+	}
+
 	
 	
 

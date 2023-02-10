@@ -10,5 +10,6 @@ public interface SupportTeamService {
 	public SupportTeam getSupportById(String id);
 	public SupportTeam updateSupport(String id,SupportTeam support);
 	public String deleteSupport(String id);
+	public SupportTeam findByProjectname(String projectname);
 
 }

@@ -1,6 +1,7 @@
 package com.axis.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -62,4 +63,13 @@ public class SupportTeamServiceImpl implements SupportTeamService {
 		return AppConstant.DELETE_MSG;
 	}
 
-}
+	@Override
+	public SupportTeam findByProjectname(String projectname) {
+		// TODO Auto-generated method stub
+		SupportTeam sprt=supportTeamRepository.findByProjectname(projectname);
+					return sprt;
+		}
+		
+	}
+
+
